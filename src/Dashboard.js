@@ -25,16 +25,25 @@ function Dashboard() {
     fetchUserName();
   }, [user, loading]);
   return (
-    <div className="dashboard">
-       <div className="dashboard__container">
-        Logged in as
-         <div>{name}</div>
-         <div>{user?.email}</div>
-         <button className="dashboard__btn" onClick={logout}>
-          Logout
-         </button>
-       </div>
-     </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Dashboard</h5>
+              <div class="card-body" align ="center">
+                Logged in as
+                <div class="d-flex justify-content-center">{name}</div>
+                <div class="d-flex justify-content-center">{user?.email}</div>
+              </div>
+              <div class="d-grid mb-2">
+                <button class="btn btn-primary btn-forgot text-uppercase fw-bold"  onClick={logout}>Logout</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   );
 }
 export default Dashboard;
